@@ -16,9 +16,12 @@ import { Button } from "@/components/ui/button";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 px-2 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
-        <div className="mr-4 hidden md:flex">
+    <header
+      id="header"
+      className="sticky top-0 z-50 px-2 w-full border-b bg-background backdrop-blur supports-[backdrop-filter]:bg-background/80"
+    >
+      <div id="holder" className="flex h-14 items-center justify-between">
+        <div className="flex items-center">
           <Link to="/" className="mr-6 flex items-center space-x-2">
             <span className="hidden font-bold sm:inline-block">
               ACME Fashion
@@ -27,7 +30,9 @@ export default function Header() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Menswear</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent">
+                  Menswear
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
@@ -58,7 +63,9 @@ export default function Header() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Womenswear</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent">
+                  Womenswear
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
@@ -91,7 +98,7 @@ export default function Header() {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="flex flex-1 items-center justify-end">
+        <div className="test-border flex items-center">
           <nav className="flex items-center space-x-1">
             <Button variant="ghost" size="icon" asChild>
               <Link to="/cart">
