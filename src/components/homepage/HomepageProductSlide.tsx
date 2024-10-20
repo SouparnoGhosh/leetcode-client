@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
-import { ArrowRight, ChevronLeft, ChevronRight, Link } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Section } from "@/types";
 import ProductCard from "../common/ProductCard";
@@ -25,12 +26,16 @@ function HomepageProductSlide({
     setStartIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
 
+  const urlPath = `/${gender}/${section.title
+    .toLowerCase()
+    .replace(/\s+/g, "-")}`;
+
   return (
     <section className="mb-12">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-semibold">{section.title}</h2>
         <Link
-          to={`/${gender}/${section.title.toLowerCase().replace(/\s+/g, "-")}`}
+          to={urlPath}
           className="text-primary hover:underline flex items-center"
         >
           Go to section <ArrowRight className="ml-2 h-4 w-4" />
@@ -45,6 +50,7 @@ function HomepageProductSlide({
             ))}
         </div>
         <Button
+          id="prev"
           variant="outline"
           size="icon"
           className={cn(
@@ -56,6 +62,7 @@ function HomepageProductSlide({
           <ChevronLeft className="h-4 w-4" />
         </Button>
         <Button
+          id="next"
           variant="outline"
           size="icon"
           className={cn(
@@ -70,6 +77,5 @@ function HomepageProductSlide({
     </section>
   );
 }
-
 
 export default HomepageProductSlide;

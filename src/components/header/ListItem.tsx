@@ -32,6 +32,6 @@ const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
     );
   }
 );
-ListItem.displayName = "ListItem";
+ListItem.displayName = "ListItem"; /* For React Dev Tools */
 
 export default ListItem;

@@ -5,13 +5,13 @@ import Header from "./Header.tsx";
 import { BrowserRouter } from "react-router-dom";
 import Footer from "./Footer.tsx";
 import Homepage from "./Homepage.tsx";
-import { menswearSections } from "./lib/constants";
+import { menswearSections, womenswearSections } from "./lib/constants";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Header />
-      <Homepage gender="men" sections={menswearSections} />
+      <Homepage menswearSections={menswearSections} womenswearSections={womenswearSections} />
       <Footer />
     </BrowserRouter>
   </StrictMode>

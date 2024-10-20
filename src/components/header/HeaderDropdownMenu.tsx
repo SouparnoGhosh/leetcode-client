@@ -8,30 +8,42 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import DropdownMenuComponent from "@/components/header/DropdownMenuComponent";
+import { useAtom } from "jotai";
+import { genderAtom } from "@/atoms";
 
 const HeaderDropdownMenu = () => {
+  const [gender, setGender] = useAtom(genderAtom);
+
+  const handleChangeGender = (newGender: "women" | "men") => {
+    console.log(`Changing gender from ${gender} to ${newGender}`);
+    setGender(newGender);
+    localStorage.setItem("lastViewedGender", newGender);
+  };
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
+        <NavigationMenuItem id="menswear">
           <NavigationMenuTrigger className="bg-transparent">
             Menswear
           </NavigationMenuTrigger>
           <DropdownMenuComponent
             title="Menswear"
-            collectionLink="/menswear"
+            gender="men"
+            handleChangeGender={handleChangeGender}
             collectionTitle="Menswear Collection"
             collectionDescription="Discover our latest styles for men"
             items={menswearItems}
           />
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem id="womenswear">
           <NavigationMenuTrigger className="bg-transparent">
             Womenswear
           </NavigationMenuTrigger>
           <DropdownMenuComponent
             title="Womenswear"
-            collectionLink="/womenswear"
+            gender="women"
+            handleChangeGender={handleChangeGender}
             collectionTitle="Womenswear Collection"
             collectionDescription="Explore our latest styles for women"
             items={womenswearItems}

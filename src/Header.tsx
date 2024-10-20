@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-import { ShoppingBag, Heart, User } from "lucide-react";
+import { ShoppingBag, Heart } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import HeaderDropdownMenu from "@/components/header/HeaderDropdownMenu";
+import SearchIcon from "@/components/header/SearchIcon";
+import ProfileIconWithAuthModal from "./components/common/ProfileIconWithAuthModal";
 
 export default function Header() {
   return (
@@ -29,6 +31,9 @@ export default function Header() {
         <div id="header-buttons-holder" className="flex items-center">
           <nav className="flex items-center space-x-1">
             <Button variant="ghost" size="icon" asChild>
+              <SearchIcon />
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
               <Link to="/cart">
                 <ShoppingBag className="h-5 w-5" />
                 <span className="sr-only">Cart</span>
@@ -41,10 +46,11 @@ export default function Header() {
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link to="/profile">
+              {/* <Link to="/profile">
                 <User className="h-5 w-5" />
                 <span className="sr-only">Profile</span>
-              </Link>
+              </Link> */}
+              <ProfileIconWithAuthModal />
             </Button>
           </nav>
         </div>
