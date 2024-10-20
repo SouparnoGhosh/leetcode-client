@@ -1,18 +1,8 @@
-import * as React from "react";
 import { Link } from "react-router-dom";
 import { ShoppingBag, Heart, User } from "lucide-react";
-import { menswearItems, womenswearItems } from "@/lib/constants";
 
-import { cn } from "@/lib/utils";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
+import HeaderDropdownMenu from "@/components/header/HeaderDropdownMenu";
 
 export default function Header() {
   return (
@@ -20,85 +10,23 @@ export default function Header() {
       id="header"
       className="sticky top-0 z-50 px-2 w-full border-b bg-background backdrop-blur supports-[backdrop-filter]:bg-background/80"
     >
-      <div id="holder" className="flex h-14 items-center justify-between">
+      <div
+        id="holder"
+        className="relative flex h-14 items-center justify-between"
+      >
         <div className="flex items-center">
-          <Link to="/" className="mr-6 flex items-center space-x-2">
-            <span className="hidden font-bold sm:inline-block">
-              ACME Fashion
-            </span>
-          </Link>
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent">
-                  Menswear
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                    <li className="row-span-3">
-                      <NavigationMenuLink asChild>
-                        <Link
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                          to="/menswear"
-                        >
-                          <div className="mb-2 mt-4 text-lg font-medium">
-                            Menswear Collection
-                          </div>
-                          <p className="text-sm leading-tight text-muted-foreground">
-                            Discover our latest styles for men
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    {menswearItems.map((item) => (
-                      <ListItem
-                        key={item.title}
-                        title={item.title}
-                        to="/menswear"
-                      >
-                        {item.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent">
-                  Womenswear
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                    <li className="row-span-3">
-                      <NavigationMenuLink asChild>
-                        <Link
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                          to="/womenswear"
-                        >
-                          <div className="mb-2 mt-4 text-lg font-medium">
-                            Womenswear Collection
-                          </div>
-                          <p className="text-sm leading-tight text-muted-foreground">
-                            Explore our latest styles for women
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    {womenswearItems.map((item) => (
-                      <ListItem
-                        key={item.title}
-                        title={item.title}
-                        to={item.href}
-                      >
-                        {item.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+          <HeaderDropdownMenu />
         </div>
-        <div className="test-border flex items-center">
+        <div className="absolute left-1/2 transform -translate-x-1/2">
+          <Link
+            id="title-banner"
+            to="/"
+            className="flex items-center space-x-2"
+          >
+            <span className="text-2xl font-extrabold">Stitched</span>
+          </Link>
+        </div>
+        <div id="header-buttons-holder" className="flex items-center">
           <nav className="flex items-center space-x-1">
             <Button variant="ghost" size="icon" asChild>
               <Link to="/cart">
@@ -124,34 +52,3 @@ export default function Header() {
     </header>
   );
 }
-
-interface ListItemProps extends React.ComponentPropsWithoutRef<"a"> {
-  to: string;
-  title: string;
-}
-
-const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
-  ({ className, title, children, to, ...props }, ref) => {
-    return (
-      <li>
-        <NavigationMenuLink asChild>
-          <Link
-            ref={ref}
-            to={to}
-            className={cn(
-              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className
-            )}
-            {...props}
-          >
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-              {children}
-            </p>
-          </Link>
-        </NavigationMenuLink>
-      </li>
-    );
-  }
-);
-ListItem.displayName = "ListItem";
