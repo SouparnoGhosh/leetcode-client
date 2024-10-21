@@ -13,3 +13,6 @@ const systemPrefersDark =
 const initialTheme = systemPrefersDark ? "dark" : "light";
 
 export const themeAtom = atom<"light" | "dark">(initialTheme);
+
+// Logged In Atom
+export const loggedInAtom = atom<boolean>(false);

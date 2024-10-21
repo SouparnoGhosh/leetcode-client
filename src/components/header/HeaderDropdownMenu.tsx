@@ -1,15 +1,9 @@
-import { menswearItems, womenswearItems } from "@/lib/constants";
+import { menswear, womenswear } from "@/lib/constants";
 
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 
-import DropdownMenuComponent from "@/components/header/DropdownMenuComponent";
 import { useAtom } from "jotai";
-import { genderAtom } from "@/atoms";
+import { genderAtom } from "@/components/utils/atoms";
+import NewDropdownMenuComponent from "./NewDropdownMenuComponent";
 
 const HeaderDropdownMenu = () => {
   const [gender, setGender] = useAtom(genderAtom);
@@ -21,36 +15,11 @@ const HeaderDropdownMenu = () => {
   };
 
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem id="menswear">
-          <NavigationMenuTrigger className="bg-transparent">
-            Menswear
-          </NavigationMenuTrigger>
-          <DropdownMenuComponent
-            title="Menswear"
-            gender="men"
-            handleChangeGender={handleChangeGender}
-            collectionTitle="Menswear Collection"
-            collectionDescription="Discover our latest styles for men"
-            items={menswearItems}
-          />
-        </NavigationMenuItem>
-        <NavigationMenuItem id="womenswear">
-          <NavigationMenuTrigger className="bg-transparent">
-            Womenswear
-          </NavigationMenuTrigger>
-          <DropdownMenuComponent
-            title="Womenswear"
-            gender="women"
-            handleChangeGender={handleChangeGender}
-            collectionTitle="Womenswear Collection"
-            collectionDescription="Explore our latest styles for women"
-            items={womenswearItems}
-          />
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+    <>
+
+      <NewDropdownMenuComponent wear={womenswear} gender="women" handleChangeGender={handleChangeGender} />
+      <NewDropdownMenuComponent wear={menswear} gender="men" handleChangeGender={handleChangeGender} />
+    </>
   );
 };
 

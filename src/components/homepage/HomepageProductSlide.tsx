@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import { Section } from "@/types";
+import { Section } from "@/components/utils/types";
 import ProductCard from "../common/ProductCard";
 import { useState } from "react";
 

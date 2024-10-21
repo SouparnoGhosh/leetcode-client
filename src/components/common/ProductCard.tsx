@@ -1,28 +1,30 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Product } from "@/types";
+import { Product } from "@/components/utils/types";
 import { Img } from "react-image";
 
 function ProductCard({ product }: { product: Product }) {
   return (
-    <Card className="w-[250px] mx-2">
+    <Card className="w-[250px] mx-2 rounded-none shadow-none border-none">
       <CardContent className="p-4">
         <Img
           src={product.image}
           alt={product.name}
-          width={200}
-          height={200}
-          className="w-full h-[200px] object-cover mb-4 rounded-md"
+          className="w-full h-[300px] object-cover object-top mb-4 rounded-sm"
           loader={
-            <div className="w-full h-[200px] bg-gray-200 animate-pulse mb-4 rounded-md"></div>
+            <div className="w-full h-[300px] bg-gray-200 animate-pulse mb-4 rounded-md"></div>
           }
           unloader={
-            <div className="w-full h-[200px] bg-gray-200 mb-4 rounded-md">
+            <div className="w-full h-[300px] bg-gray-200 mb-4 rounded-md">
               Image not available
             </div>
           }
         />
-        <h3 className="font-semibold mb-2 truncate">{product.name}</h3>
-        <p className="text-primary">${product.price.toFixed(2)}</p>
+        <div className="space-y-1">
+          <div className="text-xs text-gray-500 uppercase">New Season</div>
+          <h3 className="font-semibold">{product.name}</h3>
+          <p className="text-sm text-gray-600">{product.name}</p>
+          <p className="font-medium">${product.price.toFixed(2)}</p>
+        </div>
       </CardContent>
     </Card>
   );

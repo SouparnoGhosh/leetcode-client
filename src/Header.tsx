@@ -1,12 +1,28 @@
 import { Link } from "react-router-dom";
-import { ShoppingBag, Heart } from "lucide-react";
+import { ShoppingBag, Heart, User } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import HeaderDropdownMenu from "@/components/header/HeaderDropdownMenu";
 import SearchIcon from "@/components/header/SearchIcon";
 import ProfileIconWithAuthModal from "./components/common/ProfileIconWithAuthModal";
+import { loggedInAtom } from "./components/utils/atoms";
+import { useAtom } from "jotai";
+import TitleBanner from "./components/common/TitleBanner";
+
+const LoggednInProfileIcon = () => {
+  return (
+    <Button variant="ghost" size="icon" asChild>
+      <Link to="/profile">
+        <User className="h-5 w-5" />
+        <span className="sr-only">Profile</span>
+      </Link>
+    </Button>
+  );
+};
 
 export default function Header() {
+  const [isLoggedIn] = useAtom(loggedInAtom);
+
   return (
     <header
       id="header"
@@ -25,7 +41,7 @@ export default function Header() {
             to="/"
             className="flex items-center space-x-2"
           >
-            <span className="text-2xl font-extrabold">Stitched</span>
+            <TitleBanner />
           </Link>
         </div>
         <div id="header-buttons-holder" className="flex items-center">
@@ -46,11 +62,11 @@ export default function Header() {
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              {/* <Link to="/profile">
-                <User className="h-5 w-5" />
-                <span className="sr-only">Profile</span>
-              </Link> */}
-              <ProfileIconWithAuthModal />
+              {!isLoggedIn ? (
+                <ProfileIconWithAuthModal />
+              ) : (
+                <LoggednInProfileIcon />
+              )}
             </Button>
           </nav>
         </div>

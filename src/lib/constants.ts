@@ -1,7 +1,8 @@
 import menPlaceholderImage from "@/assets/MenPlaceholder.jpg";
 import womenPlaceholderImage from "@/assets/WomenPlaceholder.jpg";
-import { Section } from "@/types";
+import { Section } from "@/components/utils/types";
 
+/* For Product Slides */
 export const menswearSections: Section[] = [
   {
     title: "Fresh Arrivals",
@@ -348,38 +349,273 @@ export const womenswearSections: Section[] = [
   },
 ];
 
-export const menswearItems = [
-  {
-    title: "Shirts",
-    href: "/menswear/shirts",
-    description: "Casual and formal shirts for every occasion",
-  },
-  {
-    title: "Pants",
-    href: "/menswear/pants",
-    description: "Trousers, jeans, and shorts for men",
-  },
-  {
-    title: "Accessories",
-    href: "/menswear/accessories",
-    description: "Belts, ties, and other men's accessories",
-  },
-];
+/* For Clothing Categories in the Header */
+/* Define the types */
+export interface Subcategory {
+  name: string;
+}
 
-export const womenswearItems = [
-  {
-    title: "Dresses",
-    href: "/womenswear/dresses",
-    description: "Elegant dresses for any occasion",
-  },
-  {
-    title: "Tops",
-    href: "/womenswear/tops",
-    description: "Blouses, t-shirts, and more",
-  },
-  {
-    title: "Accessories",
-    href: "/womenswear/accessories",
-    description: "Jewelry, bags, and other women's accessories",
-  },
-];
+export interface Category {
+  name: string;
+  subcategories: Subcategory[];
+}
+
+export interface Wear {
+  title: string;
+  description: string;
+  categories: Category[];
+}
+
+/* Define the womenswear object */
+export const womenswear: Wear = {
+  title: "Womenswear",
+  description: "Explore our wide range of women's clothing and accessories.",
+  categories: [
+    {
+      name: "Dresses",
+      subcategories: [
+        { name: "Maxi Dresses" },
+        { name: "Mini Dresses" },
+        { name: "Midi Dresses" },
+        { name: "Evening Dresses" },
+        { name: "Cocktail Dresses" },
+        { name: "Casual Dresses" },
+      ],
+    },
+    {
+      name: "Tops",
+      subcategories: [
+        { name: "T-Shirts" },
+        { name: "Blouses" },
+        { name: "Tank Tops" },
+        { name: "Crop Tops" },
+        { name: "Shirts" },
+        { name: "Tunics" },
+      ],
+    },
+    {
+      name: "Bottoms",
+      subcategories: [
+        { name: "Jeans" },
+        { name: "Trousers" },
+        { name: "Leggings" },
+        { name: "Skirts" },
+      ],
+    },
+    {
+      name: "Outerwear",
+      subcategories: [
+        { name: "Jackets" },
+        { name: "Blazers" },
+        { name: "Coats" },
+        { name: "Cardigans" },
+        { name: "Sweaters" },
+        { name: "Hoodies" },
+      ],
+    },
+    {
+      name: "Ethnic Wear",
+      subcategories: [
+        { name: "Sarees" },
+        { name: "Kurtis" },
+        { name: "Anarkalis" },
+        { name: "Salwar Suits" },
+        { name: "Lehenga Cholis" },
+      ],
+    },
+    {
+      name: "Activewear",
+      subcategories: [
+        { name: "Yoga Pants" },
+        { name: "Tracksuits" },
+        { name: "Gym Tops" },
+        { name: "Sweatpants" },
+      ],
+    },
+    {
+      name: "Bags",
+      subcategories: [
+        { name: "Handbags" },
+        { name: "Backpacks" },
+        { name: "Clutches" },
+        { name: "Crossbody Bags" },
+      ],
+    },
+    {
+      name: "Jewelry",
+      subcategories: [
+        { name: "Earrings" },
+        { name: "Necklaces" },
+        { name: "Bracelets" },
+        { name: "Rings" },
+      ],
+    },
+    {
+      name: "Footwear",
+      subcategories: [
+        { name: "Heels" },
+        { name: "Flats" },
+        { name: "Sneakers" },
+        { name: "Boots" },
+        { name: "Sandals" },
+      ],
+    },
+  ],
+};
+
+/* Define the menswear object */
+export const menswear: Wear = {
+  title: "Menswear",
+  description: "Discover our selection of men's clothing and accessories.",
+  categories: [
+    {
+      name: "Shirts",
+      subcategories: [
+        { name: "Casual Shirts" },
+        { name: "Formal Shirts" },
+        { name: "T-Shirts" },
+        { name: "Polo Shirts" },
+        { name: "Henleys" },
+      ],
+    },
+    {
+      name: "Bottoms",
+      subcategories: [
+        { name: "Jeans" },
+        { name: "Trousers" },
+        { name: "Shorts" },
+        { name: "Joggers" },
+        { name: "Cargo Pants" },
+      ],
+    },
+    {
+      name: "Outerwear",
+      subcategories: [
+        { name: "Jackets" },
+        { name: "Blazers" },
+        { name: "Coats" },
+        { name: "Sweaters" },
+        { name: "Hoodies" },
+      ],
+    },
+    {
+      name: "Suits & Blazers",
+      subcategories: [
+        { name: "Single-Breasted Suits" },
+        { name: "Double-Breasted Suits" },
+        { name: "Blazer Jackets" },
+      ],
+    },
+    {
+      name: "Activewear",
+      subcategories: [
+        { name: "Track Pants" },
+        { name: "Sports Shorts" },
+        { name: "Gym T-Shirts" },
+        { name: "Sweatpants" },
+      ],
+    },
+    {
+      name: "Ethnic Wear",
+      subcategories: [
+        { name: "Kurta Pajamas" },
+        { name: "Sherwanis" },
+        { name: "Nehru Jackets" },
+        { name: "Bandhgalas" },
+      ],
+    },
+    {
+      name: "Footwear",
+      subcategories: [
+        { name: "Sneakers" },
+        { name: "Loafers" },
+        { name: "Dress Shoes" },
+        { name: "Boots" },
+        { name: "Sandals" },
+      ],
+    },
+    {
+      name: "Bags",
+      subcategories: [
+        { name: "Backpacks" },
+        { name: "Messenger Bags" },
+        { name: "Duffle Bags" },
+        { name: "Briefcases" },
+      ],
+    },
+    {
+      name: "Accessories",
+      subcategories: [
+        { name: "Belts" },
+        { name: "Hats & Caps" },
+        { name: "Ties & Pocket Squares" },
+        { name: "Cufflinks" },
+      ],
+    },
+  ],
+};
+
+/* Clothing Categories and subcategories
+
+1. Dresses
+Maxi Dresses
+Mini Dresses
+Midi Dresses
+Evening Dresses
+Cocktail Dresses
+Casual Dresses
+
+2. Tops
+T-Shirts
+Blouses
+Tank Tops
+Crop Tops
+Shirts
+Tunics
+
+3. Bottoms
+Jeans
+Trousers
+Leggings
+Skirts
+
+4. Outerwear
+Jackets
+Blazers
+Coats
+Cardigans
+Sweaters
+Hoodies
+
+5. Ethnic Wear
+Sarees
+Kurtis
+Anarkalis
+Salwar Suits
+Lehenga Cholis
+
+6. Activewear
+Yoga Pants
+Tracksuits
+Gym Tops
+Sweatpants
+
+7. Bags
+Handbags
+Backpacks
+Clutches
+Crossbody Bags
+
+8. Jewelry
+Earrings
+Necklaces
+Bracelets
+Rings
+
+9. Footwear
+Heels
+Flats
+Sneakers
+Boots
+Sandals
+*/
