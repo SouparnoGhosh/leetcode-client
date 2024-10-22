@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -56,6 +57,7 @@
     --chart-5: 340 75% 55%;
   }
 }
+
 @layer base {
   * {
     @apply border-border;
@@ -68,5 +70,13 @@
 @layer components {
   .test-border {
     @apply border border-red-500;
+  }
+}
+
+@layer utilities {
+  /* Firefox Scrollbar*/
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(211, 178, 178, 0.5) transparent; /* pink-gray */
   }
 }

@@ -1,24 +1,23 @@
-import { menswear, womenswear } from "@/lib/constants";
+import { menswear, womenswear } from "@/components/utils/constants";
 
-
-import { useAtom } from "jotai";
-import { genderAtom } from "@/components/utils/atoms";
-import NewDropdownMenuComponent from "./NewDropdownMenuComponent";
+import DropdownMenuComponent from "@/components/header/DropdownMenuComponent";
+import useHandleChangeGender from "@/hooks/useHandleChangeGender";
 
 const HeaderDropdownMenu = () => {
-  const [gender, setGender] = useAtom(genderAtom);
-
-  const handleChangeGender = (newGender: "women" | "men") => {
-    console.log(`Changing gender from ${gender} to ${newGender}`);
-    setGender(newGender);
-    localStorage.setItem("lastViewedGender", newGender);
-  };
+  const handleChangeGender = useHandleChangeGender();
 
   return (
     <>
-
-      <NewDropdownMenuComponent wear={womenswear} gender="women" handleChangeGender={handleChangeGender} />
-      <NewDropdownMenuComponent wear={menswear} gender="men" handleChangeGender={handleChangeGender} />
+      <DropdownMenuComponent
+        wear={womenswear}
+        gender="women"
+        handleChangeGender={handleChangeGender}
+      />
+      <DropdownMenuComponent
+        wear={menswear}
+        gender="men"
+        handleChangeGender={handleChangeGender}
+      />
     </>
   );
 };

@@ -1,6 +1,6 @@
 import menPlaceholderImage from "@/assets/MenPlaceholder.jpg";
 import womenPlaceholderImage from "@/assets/WomenPlaceholder.jpg";
-import { Section } from "@/components/utils/types";
+import { Section, Wear } from "@/components/utils/types";
 
 /* For Product Slides */
 export const menswearSections: Section[] = [
@@ -350,114 +350,108 @@ export const womenswearSections: Section[] = [
 ];
 
 /* For Clothing Categories in the Header */
-/* Define the types */
-export interface Subcategory {
-  name: string;
-}
-
-export interface Category {
-  name: string;
-  subcategories: Subcategory[];
-}
-
-export interface Wear {
-  title: string;
-  description: string;
-  categories: Category[];
-}
-
 /* Define the womenswear object */
 export const womenswear: Wear = {
   title: "Womenswear",
   description: "Explore our wide range of women's clothing and accessories.",
+  url: "womenswear",
   categories: [
     {
       name: "Dresses",
+      url: "womenswear/dresses",
       subcategories: [
-        { name: "Maxi Dresses" },
-        { name: "Mini Dresses" },
-        { name: "Midi Dresses" },
-        { name: "Evening Dresses" },
-        { name: "Cocktail Dresses" },
-        { name: "Casual Dresses" },
+        { name: "Maxi Dresses", url: "womenswear/dresses/maxidresses" },
+        { name: "Mini Dresses", url: "womenswear/dresses/minidresses" },
+        { name: "Midi Dresses", url: "womenswear/dresses/mididresses" },
+        { name: "Evening Dresses", url: "womenswear/dresses/eveningdresses" },
+        { name: "Cocktail Dresses", url: "womenswear/dresses/cocktaildresses" },
+        { name: "Casual Dresses", url: "womenswear/dresses/casualdresses" },
       ],
     },
     {
       name: "Tops",
+      url: "womenswear/tops",
       subcategories: [
-        { name: "T-Shirts" },
-        { name: "Blouses" },
-        { name: "Tank Tops" },
-        { name: "Crop Tops" },
-        { name: "Shirts" },
-        { name: "Tunics" },
+        { name: "T-Shirts", url: "womenswear/tops/tshirts" },
+        { name: "Blouses", url: "womenswear/tops/blouses" },
+        { name: "Tank Tops", url: "womenswear/tops/tanktops" },
+        { name: "Crop Tops", url: "womenswear/tops/croptops" },
+        { name: "Shirts", url: "womenswear/tops/shirts" },
+        { name: "Tunics", url: "womenswear/tops/tunics" },
       ],
     },
     {
       name: "Bottoms",
+      url: "womenswear/bottoms",
       subcategories: [
-        { name: "Jeans" },
-        { name: "Trousers" },
-        { name: "Leggings" },
-        { name: "Skirts" },
+        { name: "Jeans", url: "womenswear/bottoms/jeans" },
+        { name: "Trousers", url: "womenswear/bottoms/trousers" },
+        { name: "Leggings", url: "womenswear/bottoms/leggings" },
+        { name: "Skirts", url: "womenswear/bottoms/skirts" },
       ],
     },
     {
       name: "Outerwear",
+      url: "womenswear/outerwear",
       subcategories: [
-        { name: "Jackets" },
-        { name: "Blazers" },
-        { name: "Coats" },
-        { name: "Cardigans" },
-        { name: "Sweaters" },
-        { name: "Hoodies" },
+        { name: "Jackets", url: "womenswear/outerwear/jackets" },
+        { name: "Blazers", url: "womenswear/outerwear/blazers" },
+        { name: "Coats", url: "womenswear/outerwear/coats" },
+        { name: "Cardigans", url: "womenswear/outerwear/cardigans" },
+        { name: "Sweaters", url: "womenswear/outerwear/sweaters" },
+        { name: "Hoodies", url: "womenswear/outerwear/hoodies" },
       ],
     },
     {
       name: "Ethnic Wear",
+      url: "womenswear/ethnicwear",
       subcategories: [
-        { name: "Sarees" },
-        { name: "Kurtis" },
-        { name: "Anarkalis" },
-        { name: "Salwar Suits" },
-        { name: "Lehenga Cholis" },
+        { name: "Sarees", url: "womenswear/ethnicwear/sarees" },
+        { name: "Kurtis", url: "womenswear/ethnicwear/kurtis" },
+        { name: "Anarkalis", url: "womenswear/ethnicwear/anarkalis" },
+        { name: "Salwar Suits", url: "womenswear/ethnicwear/salwarsuits" },
+        { name: "Lehenga Cholis", url: "womenswear/ethnicwear/lehengacholis" },
       ],
     },
     {
       name: "Activewear",
+      url: "womenswear/activewear",
       subcategories: [
-        { name: "Yoga Pants" },
-        { name: "Tracksuits" },
-        { name: "Gym Tops" },
-        { name: "Sweatpants" },
+        { name: "Yoga Pants", url: "womenswear/activewear/yogapants" },
+        { name: "Tracksuits", url: "womenswear/activewear/tracksuits" },
+        { name: "Gym Tops", url: "womenswear/activewear/gymtops" },
+        { name: "Sweatpants", url: "womenswear/activewear/sweatpants" },
       ],
     },
     {
       name: "Bags",
+      url: "womenswear/bags",
       subcategories: [
-        { name: "Handbags" },
-        { name: "Backpacks" },
-        { name: "Clutches" },
-        { name: "Crossbody Bags" },
+        { name: "Handbags", url: "womenswear/bags/handbags" },
+        { name: "Backpacks", url: "womenswear/bags/backpacks" },
+        { name: "Clutches", url: "womenswear/bags/clutches" },
+        { name: "Crossbody Bags", url: "womenswear/bags/crossbodybags" },
       ],
     },
     {
       name: "Jewelry",
+      url: "womenswear/jewelry",
       subcategories: [
-        { name: "Earrings" },
-        { name: "Necklaces" },
-        { name: "Bracelets" },
-        { name: "Rings" },
+        { name: "Earrings", url: "womenswear/jewelry/earrings" },
+        { name: "Necklaces", url: "womenswear/jewelry/necklaces" },
+        { name: "Bracelets", url: "womenswear/jewelry/bracelets" },
+        { name: "Rings", url: "womenswear/jewelry/rings" },
       ],
     },
     {
       name: "Footwear",
+      url: "womenswear/footwear",
       subcategories: [
-        { name: "Heels" },
-        { name: "Flats" },
-        { name: "Sneakers" },
-        { name: "Boots" },
-        { name: "Sandals" },
+        { name: "Heels", url: "womenswear/footwear/heels" },
+        { name: "Flats", url: "womenswear/footwear/flats" },
+        { name: "Sneakers", url: "womenswear/footwear/sneakers" },
+        { name: "Boots", url: "womenswear/footwear/boots" },
+        { name: "Sandals", url: "womenswear/footwear/sandals" },
       ],
     },
   ],
@@ -467,155 +461,109 @@ export const womenswear: Wear = {
 export const menswear: Wear = {
   title: "Menswear",
   description: "Discover our selection of men's clothing and accessories.",
+  url: "menswear",
   categories: [
     {
       name: "Shirts",
+      url: "menswear/shirts",
       subcategories: [
-        { name: "Casual Shirts" },
-        { name: "Formal Shirts" },
-        { name: "T-Shirts" },
-        { name: "Polo Shirts" },
-        { name: "Henleys" },
+        { name: "Casual Shirts", url: "menswear/shirts/casualshirts" },
+        { name: "Formal Shirts", url: "menswear/shirts/formalshirts" },
+        { name: "T-Shirts", url: "menswear/shirts/tshirts" },
+        { name: "Polo Shirts", url: "menswear/shirts/poloshirts" },
+        { name: "Henleys", url: "menswear/shirts/henleys" },
       ],
     },
     {
       name: "Bottoms",
+      url: "menswear/bottoms",
       subcategories: [
-        { name: "Jeans" },
-        { name: "Trousers" },
-        { name: "Shorts" },
-        { name: "Joggers" },
-        { name: "Cargo Pants" },
+        { name: "Jeans", url: "menswear/bottoms/jeans" },
+        { name: "Trousers", url: "menswear/bottoms/trousers" },
+        { name: "Shorts", url: "menswear/bottoms/shorts" },
+        { name: "Joggers", url: "menswear/bottoms/joggers" },
+        { name: "Cargo Pants", url: "menswear/bottoms/cargopants" },
       ],
     },
     {
       name: "Outerwear",
+      url: "menswear/outerwear",
       subcategories: [
-        { name: "Jackets" },
-        { name: "Blazers" },
-        { name: "Coats" },
-        { name: "Sweaters" },
-        { name: "Hoodies" },
+        { name: "Jackets", url: "menswear/outerwear/jackets" },
+        { name: "Blazers", url: "menswear/outerwear/blazers" },
+        { name: "Coats", url: "menswear/outerwear/coats" },
+        { name: "Sweaters", url: "menswear/outerwear/sweaters" },
+        { name: "Hoodies", url: "menswear/outerwear/hoodies" },
       ],
     },
     {
-      name: "Suits & Blazers",
+      name: "Formal Wear",
+      url: "menswear/formalwear",
       subcategories: [
-        { name: "Single-Breasted Suits" },
-        { name: "Double-Breasted Suits" },
-        { name: "Blazer Jackets" },
+        {
+          name: "Single-Breasted Suits",
+          url: "menswear/formalwear/singlebreastedsuits",
+        },
+        {
+          name: "Double-Breasted Suits",
+          url: "menswear/formalwear/doublebreastedsuits",
+        },
+        { name: "Blazer Jackets", url: "menswear/formalwear/blazerjackets" },
       ],
     },
     {
       name: "Activewear",
+      url: "menswear/activewear",
       subcategories: [
-        { name: "Track Pants" },
-        { name: "Sports Shorts" },
-        { name: "Gym T-Shirts" },
-        { name: "Sweatpants" },
+        { name: "Track Pants", url: "menswear/activewear/trackpants" },
+        { name: "Sports Shorts", url: "menswear/activewear/sportsshorts" },
+        { name: "Gym T-Shirts", url: "menswear/activewear/gymtshirts" },
+        { name: "Sweatpants", url: "menswear/activewear/sweatpants" },
       ],
     },
     {
       name: "Ethnic Wear",
+      url: "menswear/ethnicwear",
       subcategories: [
-        { name: "Kurta Pajamas" },
-        { name: "Sherwanis" },
-        { name: "Nehru Jackets" },
-        { name: "Bandhgalas" },
+        { name: "Kurta Pajamas", url: "menswear/ethnicwear/kurtapajamas" },
+        { name: "Sherwanis", url: "menswear/ethnicwear/sherwanis" },
+        { name: "Nehru Jackets", url: "menswear/ethnicwear/nehrujackets" },
+        { name: "Bandhgalas", url: "menswear/ethnicwear/bandhgalas" },
       ],
     },
     {
       name: "Footwear",
+      url: "menswear/footwear",
       subcategories: [
-        { name: "Sneakers" },
-        { name: "Loafers" },
-        { name: "Dress Shoes" },
-        { name: "Boots" },
-        { name: "Sandals" },
+        { name: "Sneakers", url: "menswear/footwear/sneakers" },
+        { name: "Loafers", url: "menswear/footwear/loafers" },
+        { name: "Dress Shoes", url: "menswear/footwear/dressshoes" },
+        { name: "Boots", url: "menswear/footwear/boots" },
+        { name: "Sandals", url: "menswear/footwear/sandals" },
       ],
     },
     {
       name: "Bags",
+      url: "menswear/bags",
       subcategories: [
-        { name: "Backpacks" },
-        { name: "Messenger Bags" },
-        { name: "Duffle Bags" },
-        { name: "Briefcases" },
+        { name: "Backpacks", url: "menswear/bags/backpacks" },
+        { name: "Messenger Bags", url: "menswear/bags/messengerbags" },
+        { name: "Duffle Bags", url: "menswear/bags/dufflebags" },
+        { name: "Briefcases", url: "menswear/bags/briefcases" },
       ],
     },
     {
       name: "Accessories",
+      url: "menswear/accessories",
       subcategories: [
-        { name: "Belts" },
-        { name: "Hats & Caps" },
-        { name: "Ties & Pocket Squares" },
-        { name: "Cufflinks" },
+        { name: "Belts", url: "menswear/accessories/belts" },
+        { name: "Hats & Caps", url: "menswear/accessories/hatscaps" },
+        {
+          name: "Ties & Pocket Squares",
+          url: "menswear/accessories/tiespocketsquares",
+        },
+        { name: "Cufflinks", url: "menswear/accessories/cufflinks" },
       ],
     },
   ],
 };
-
-/* Clothing Categories and subcategories
-
-1. Dresses
-Maxi Dresses
-Mini Dresses
-Midi Dresses
-Evening Dresses
-Cocktail Dresses
-Casual Dresses
-
-2. Tops
-T-Shirts
-Blouses
-Tank Tops
-Crop Tops
-Shirts
-Tunics
-
-3. Bottoms
-Jeans
-Trousers
-Leggings
-Skirts
-
-4. Outerwear
-Jackets
-Blazers
-Coats
-Cardigans
-Sweaters
-Hoodies
-
-5. Ethnic Wear
-Sarees
-Kurtis
-Anarkalis
-Salwar Suits
-Lehenga Cholis
-
-6. Activewear
-Yoga Pants
-Tracksuits
-Gym Tops
-Sweatpants
-
-7. Bags
-Handbags
-Backpacks
-Clutches
-Crossbody Bags
-
-8. Jewelry
-Earrings
-Necklaces
-Bracelets
-Rings
-
-9. Footwear
-Heels
-Flats
-Sneakers
-Boots
-Sandals
-*/
