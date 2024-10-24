@@ -1,9 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import Header from "./Header.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Footer from "./Footer.tsx";
 import Homepage from "./Homepage.tsx";
 import ProfilePage from "./ProfilePage.tsx";
 import {
@@ -14,7 +12,6 @@ import {
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
-      <Header />
       <Routes>
         <Route
           path="/"
@@ -37,7 +34,6 @@ createRoot(document.getElementById("root")!).render(
           }
         />
       </Routes>
-      <Footer />
     </BrowserRouter>
   </StrictMode>
 );

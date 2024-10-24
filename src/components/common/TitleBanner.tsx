@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 export default function TitleBanner() {
-  const title = "Stitched";
+  const title = "Threads";
 
   return (
     <motion.h1

@@ -1,16 +1,17 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import * as React from "react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
+import ThemeSwitch from "@/components/settings/ThemeSwitch";
 
 export default function ProfilePage() {
-  const [activeTab, setActiveTab] = React.useState("profile")
+  const [activeTab, setActiveTab] = React.useState("profile");
 
   const tabs = [
     { id: "profile", label: "Profile" },
@@ -18,7 +19,7 @@ export default function ProfilePage() {
     { id: "appearance", label: "Appearance" },
     { id: "notifications", label: "Notifications" },
     { id: "display", label: "Display" },
-  ]
+  ];
 
   const renderContent = () => {
     switch (activeTab) {
@@ -26,7 +27,9 @@ export default function ProfilePage() {
         return (
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Profile</h2>
-            <p className="text-muted-foreground">This is how others will see you on the site.</p>
+            <p className="text-muted-foreground">
+              This is how others will see you on the site.
+            </p>
             <div className="space-y-2">
               <label htmlFor="username" className="block text-sm font-medium">
                 Username
@@ -38,50 +41,55 @@ export default function ProfilePage() {
                 placeholder="Enter your username"
               />
               <p className="text-sm text-muted-foreground">
-                This is your public display name. It can be your real name or a pseudonym. You can only change this once every 30 days.
+                This is your public display name. It can be your real name or a
+                pseudonym. You can only change this once every 30 days.
               </p>
             </div>
           </div>
-        )
+        );
       case "account":
-        return <div>Account settings content</div>
+        return <div>Account settings content</div>;
       case "appearance":
-        return <div>Appearance settings content</div>
+        return <div>Appearance settings content</div>;
       case "notifications":
-        return <div>Notifications settings content</div>
+        return <div>Notifications settings content</div>;
       case "display":
-        return <div>Display settings content</div>
+        return <ThemeSwitch />;
       default:
-        return null
+        return null;
     }
-  }
+  };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto">
-      <CardHeader>
-        <CardTitle>Profile</CardTitle>
-        <CardDescription>Manage your account settings and set e-mail preferences.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="flex">
-          <div className="w-1/4 pr-4">
-            {tabs.map((tab) => (
-              <Button
-                key={tab.id}
-                variant="ghost"
-                className={cn(
-                  "w-full justify-start text-left mb-1",
-                  activeTab === tab.id && "bg-muted"
-                )}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.label}
-              </Button>
-            ))}
+    <div className="flex justify-center min-h-screen">
+      <Card className="w-full max-w-4xl mt-[15vh] max-h-[50vh]">
+        <CardHeader>
+          <CardTitle>Settings</CardTitle>
+          <CardDescription>
+            Manage your account settings and set e-mail preferences.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex">
+            <div className="w-1/4 pr-4">
+              {tabs.map((tab) => (
+                <Button
+                  key={tab.id}
+                  variant="ghost"
+                  className={cn(
+                    "w-full justify-start text-left mb-1",
+                    activeTab === tab.id && "bg-muted"
+                  )}
+                  onClick={() => setActiveTab(tab.id)}
+                >
+                  {tab.label}
+                </Button>
+              ))}
+            </div>
+            <div className="w-3/4 pl-4 border-l">{renderContent()}</div>
           </div>
-          <div className="w-3/4 pl-4 border-l">{renderContent()}</div>
-        </div>
-      </CardContent>
-    </Card>
-  )
+        </CardContent>
+      </Card>
+    </div>
+  );
 }
