@@ -1,6 +1,6 @@
 import { useAtom } from "jotai";
-import { genderAtom } from "@/components/utils/atoms";
-import { Section } from "@/components/utils/types";
+import { genderAtom } from "@/utils/atoms";
+import { Section } from "@/utils/types";
 import HomepageProductSlide from "@/components/homepage/HomepageProductSlide";
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 import Header from "./Header";

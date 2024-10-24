@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import { Section } from "@/components/utils/types";
+import { Section } from "@/utils/types";
 import ProductCard from "../common/ProductCard";
 import { useState } from "react";
 
@@ -47,6 +47,7 @@ function HomepageProductSlide({
             .slice(startIndex, startIndex + itemsToShow)
             .map((product) => (
               <ProductCard key={product.id} product={product} />
+              // <WishlistCard key={product.id} product={product} />
             ))}
         </div>
         <Button

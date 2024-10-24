@@ -1,4 +1,4 @@
-import { menswear, womenswear } from "@/components/utils/constants";
+import { menswear, womenswear } from "@/utils/constants";
 
 import DropdownMenuComponent from "@/components/header/DropdownMenuComponent";
 import useHandleChangeGender from "@/hooks/useHandleChangeGender";

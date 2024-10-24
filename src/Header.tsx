@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import HeaderDropdownMenu from "@/components/header/HeaderDropdownMenu";
 import SearchIcon from "@/components/header/SearchIcon";
 import ProfileIconWithAuthModal from "./components/common/ProfileIconWithAuthModal";
-import { loggedInAtom } from "./components/utils/atoms";
+import { loggedInAtom } from "./utils/atoms";
 import { useAtom } from "jotai";
 import TitleBanner from "./components/common/TitleBanner";
 
@@ -46,7 +46,7 @@ export default function Header() {
         </div>
         <div id="header-buttons-holder" className="flex items-center">
           <nav className="flex items-center space-x-1">
-            <Button variant="ghost" size="icon" asChild>
+            <Button className="backdrop-blur" variant="ghost" size="icon" asChild>
               <SearchIcon />
             </Button>
             <Button variant="ghost" size="icon" asChild>

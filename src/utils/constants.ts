@@ -1,6 +1,7 @@
 import menPlaceholderImage from "@/assets/MenPlaceholder.jpg";
 import womenPlaceholderImage from "@/assets/WomenPlaceholder.jpg";
-import { Section, Wear } from "@/components/utils/types";
+import wishlistPlaceholderImage from "@/assets/WishlistPlaceholder.jpg";
+import { Product, Section, Wear } from "@/utils/types";
 
 /* For Product Slides */
 export const menswearSections: Section[] = [
@@ -567,3 +568,67 @@ export const menswear: Wear = {
     },
   ],
 };
+
+/* For Wishlist Page */
+export const wishlistItems: Product[] = [
+  {
+    id: 1,
+    name: "Classic White T-Shirt",
+    price: 19.99,
+    image: wishlistPlaceholderImage,
+  },
+  {
+    id: 2,
+    name: "Slim Fit Jeans",
+    price: 49.99,
+    image: wishlistPlaceholderImage,
+  },
+  {
+    id: 3,
+    name: "Leather Ankle Boots",
+    price: 89.99,
+    image: wishlistPlaceholderImage,
+  },
+  {
+    id: 4,
+    name: "Floral Summer Dress",
+    price: 34.99,
+    image: wishlistPlaceholderImage,
+  },
+  {
+    id: 5,
+    name: "Denim Jacket",
+    price: 59.99,
+    image: wishlistPlaceholderImage,
+  },
+  {
+    id: 6,
+    name: "Casual Hoodie",
+    price: 29.99,
+    image: wishlistPlaceholderImage,
+  },
+  {
+    id: 7,
+    name: "Vintage Sunglasses",
+    price: 24.99,
+    image: wishlistPlaceholderImage,
+  },
+  {
+    id: 8,
+    name: "Wool Scarf",
+    price: 14.99,
+    image: wishlistPlaceholderImage,
+  },
+  {
+    id: 9,
+    name: "Running Shoes",
+    price: 74.99,
+    image: wishlistPlaceholderImage,
+  },
+  {
+    id: 10,
+    name: "Striped Polo Shirt",
+    price: 22.99,
+    image: wishlistPlaceholderImage,
+  },
+];

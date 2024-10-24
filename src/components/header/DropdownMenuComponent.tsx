@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 
-import { Category, Wear } from "@/components/utils/types";
+import { Category, Wear } from "@/utils/types";
 import { Link } from "react-router-dom";
 
 type NewDropdownMenuComponentProps = {

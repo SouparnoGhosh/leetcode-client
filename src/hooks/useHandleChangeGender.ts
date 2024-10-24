@@ -1,6 +1,6 @@
 import { useAtom } from "jotai";
 import { useLocation, useNavigate } from "react-router-dom";
-import { genderAtom } from "@/components/utils/atoms";
+import { genderAtom } from "@/utils/atoms";
 
 const useHandleChangeGender = () => {
   const [, setGender] = useAtom(genderAtom);

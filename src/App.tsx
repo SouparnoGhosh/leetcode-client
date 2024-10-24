@@ -3,10 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./Homepage";
 import SettingsPage from "@/SettingsPage";
 import { useTheme } from "@/hooks/useTheme";
-import {
-  menswearSections,
-  womenswearSections,
-} from "./components/utils/constants";
+import { menswearSections, womenswearSections } from "./utils/constants";
+import WishlistPage from "./WishlistPage";
 
 const App = () => {
   useTheme();
@@ -23,6 +21,7 @@ const App = () => {
             />
           }
         />
+        <Route path="/wishlist" element={<WishlistPage />} />
         <Route path="/profile" element={<SettingsPage />} />
         {/* Catch-all route to redirect to homepage */}
         <Route

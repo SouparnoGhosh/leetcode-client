@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAtom } from "jotai";
-import { themeAtom } from "@/components/utils/atoms";
+import { themeAtom } from "@/utils/atoms";
 
 export const useTheme = () => {
   const [theme] = useAtom(themeAtom);
@@ -11,6 +11,6 @@ export const useTheme = () => {
     } else {
       document.documentElement.classList.remove("dark");
     }
-    localStorage.setItem("theme", theme)
+    localStorage.setItem("theme", theme);
   }, [theme]);
 };

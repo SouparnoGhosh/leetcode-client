@@ -1,6 +1,6 @@
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { themeAtom } from "../utils/atoms";
+import { themeAtom } from "../../utils/atoms";
 import { useAtom } from "jotai";
 
 export default function ThemeSwitch() {
