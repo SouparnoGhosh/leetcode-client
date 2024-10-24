@@ -1,7 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Product } from "@/components/utils/types";
 import { Img } from "react-image";
-import { Button } from "@/components/ui/button";
 
 function ProductCard({ product }: { product: Product }) {
   return (
@@ -27,7 +26,6 @@ function ProductCard({ product }: { product: Product }) {
           <p className="font-medium">${product.price.toFixed(2)}</p>
         </div>
       </CardContent>
-      <Button>Button</Button>
     </Card>
   );
 }

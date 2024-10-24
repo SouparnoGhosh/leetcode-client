@@ -9,16 +9,20 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import ThemeSwitch from "@/components/settings/ThemeSwitch";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-export default function ProfilePage() {
+export default function SettingsPage() {
   const [activeTab, setActiveTab] = React.useState("profile");
+
+  const navigate = useNavigate();
 
   const tabs = [
     { id: "profile", label: "Profile" },
-    { id: "account", label: "Account" },
+    { id: "address", label: "Address" },
+    { id: "orders", label: "Orders" },
+    { id: "payments", label: "Payments" },
     { id: "appearance", label: "Appearance" },
-    { id: "notifications", label: "Notifications" },
-    { id: "display", label: "Display" },
   ];
 
   const renderContent = () => {
@@ -47,13 +51,13 @@ export default function ProfilePage() {
             </div>
           </div>
         );
-      case "account":
-        return <div>Account settings content</div>;
+      case "address":
+        return <div>Address settings content</div>;
+      case "orders":
+        return <div>Orders settings content</div>;
+      case "payments":
+        return <div>Payments settings content</div>;
       case "appearance":
-        return <div>Appearance settings content</div>;
-      case "notifications":
-        return <div>Notifications settings content</div>;
-      case "display":
         return <ThemeSwitch />;
       default:
         return null;
@@ -62,13 +66,19 @@ export default function ProfilePage() {
 
   return (
     <div className="flex justify-center min-h-screen">
-      <Card className="w-full max-w-4xl mt-[15vh] max-h-[50vh]">
-        <CardHeader>
-          <CardTitle>Settings</CardTitle>
-          <CardDescription>
-            Manage your account settings and set e-mail preferences.
-          </CardDescription>
-        </CardHeader>
+      <Card className="w-full max-w-4xl mt-[15vh] max-h-[59vh]">
+        <div className="flex items-center">
+          <button
+            className="pl-6"
+            onClick={() => navigate(-1)}
+          >
+            <FaArrowLeft size={32} />
+          </button>
+          <CardHeader className="">
+            <CardTitle>Settings</CardTitle>
+            <CardDescription>Manage your account settings.</CardDescription>
+          </CardHeader>
+        </div>
         <CardContent>
           <div className="flex">
             <div className="w-1/4 pr-4">
