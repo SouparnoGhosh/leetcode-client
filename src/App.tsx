@@ -5,6 +5,7 @@ import SettingsPage from "@/SettingsPage";
 import { useTheme } from "@/hooks/useTheme";
 import { menswearSections, womenswearSections } from "./utils/constants";
 import WishlistPage from "./WishlistPage";
+import ProductPage from "./ProductPage";
 
 const App = () => {
   useTheme();
@@ -22,6 +23,7 @@ const App = () => {
           }
         />
         <Route path="/wishlist" element={<WishlistPage />} />
+        <Route path="/products" element={<ProductPage />} />
         <Route path="/profile" element={<SettingsPage />} />
         {/* Catch-all route to redirect to homepage */}
         <Route
