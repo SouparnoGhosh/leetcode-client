@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { User } from "lucide-react";
 
@@ -44,7 +42,7 @@ export default function AuthModal() {
           <span className="sr-only">Open auth modal</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] h-[500px] overflow-y-auto flex flex-col items-start">
         <DialogHeader>
           <div className="flex justify-between items-center">
             <DialogTitle>Authentication</DialogTitle>
