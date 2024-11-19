@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export default function AuthModal() {
+export default function ProfileIconWithAuthModal() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleGoogleSignIn = () => {
